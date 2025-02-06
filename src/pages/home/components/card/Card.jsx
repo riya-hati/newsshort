@@ -1,65 +1,37 @@
-import React, { useEffect, useState } from "react";
-import MainLayout from "../../../../component/nav/layout/MainLayout";
-import "./card.scss";
+import React from "react";
 import { Link } from "react-router-dom";
-import { MoveRight } from "lucide-react";
-const Card = () => {
-	const [newsData, setNewsData] = useState([]);
-	useEffect(() => {
-		getNewsData();
-	}, []);
-	const getNewsData = async () => {
-		const response = await fetch(
-			"https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=b6eeff707a1444cbbf11b12871b528de"
-		);
-		const jsonResponse = await response.json();
-		setNewsData(jsonResponse?.articles);
-	};
+import PublishedTime from "../../../../component/PublishTime";
 
-	console.log(newsData);
+const Card = ({ item }) => {
 	return (
-		<>
-			<MainLayout>
-				<div className="news">
-					<p>Latest News</p>
-					<button className="btn">
-						See all <MoveRight />
-					</button>
+		<div className="card">
+			<img src={item?.urlToImage} alt="image" />
+			<div className="content">
+				<PublishedTime publishedAt={item?.publishedAt} />
+				<div className="author">
+					<p>
+						{(item?.author?.slice(0, 30) || "No author available") +
+							(item?.author?.length > 30 ? "..." : "")}
+					</p>
 				</div>
-
-				<div className="container">
-					{newsData?.map((item, index) => (
-						<div className="card" key={index}>
-							<img src={item?.urlToImage} alt="image" />
-							<div className="content">
-								<div className="author">
-									<h1>
-										{(item?.author?.slice(0, 20) || "No author available") +
-											(item?.author?.length > 20 ? "..." : "")}
-									</h1>
-								</div>
-								<div className="title">
-									<h3>
-										{(item?.title?.slice(0, 30) || "No Title available") +
-											(item?.title?.length > 30 ? "..." : "")}
-									</h3>
-								</div>
-								<div className="description">
-									<p>
-										{(item?.description?.slice(0, 50) ||
-											"No description available") +
-											(item?.description?.Length > 50 ? "..." : "")}
-									</p>
-								</div>
-								<Link to={item?.url}>
-									<button className="btn_name">Read Full</button>
-								</Link>
-							</div>
-						</div>
-					))}
+				<div className="title">
+					<h1>
+						{(item?.title?.slice(0, 40) || "No Title available") +
+							(item?.title?.length > 40 ? "..." : "")}
+					</h1>
 				</div>
-			</MainLayout>
-		</>
+				<div className="description">
+					<p>
+						{(item?.description?.slice(0, 50) || "No description available") +
+							(item?.description?.length > 50 ? "..." : "")}
+						{/* {(item?.description?.slice(0, 50) ||
+                        "No description available") +
+                        (item?.description?.Length > 50 ? "..." : "")} */}
+					</p>
+				</div>
+				<Link to={item?.url}>Read More</Link>
+			</div>
+		</div>
 	);
 };
 

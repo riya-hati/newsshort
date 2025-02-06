@@ -2,10 +2,12 @@ import { Link, useSearchParams } from "react-router-dom";
 import "./categoryNews.scss";
 
 import React, { useEffect, useState } from "react";
+import Card from "../components/card/card";
+import MainLayout from "../../../component/nav/layout/MainLayout";
 
 const CategoryNews = () => {
 	const [categoryNews, setCategoryNews] = useState([]);
-	const [searchParams] = useSearchParams();    
+	const [searchParams] = useSearchParams();
 	const type = searchParams.get(`type`);
 	useEffect(() => {
 		getCategoryData();
@@ -26,22 +28,13 @@ const CategoryNews = () => {
 	console.log(type);
 
 	return (
+		<MainLayout >
 		<div className="container">
 			{categoryNews?.map((item, index) => (
-				<div className="card" key={index}>
-					<img src={item?.urlToImage} alt="image" />
-					<div className="author">
-						<h1>{item?.author}</h1>
-					</div>
-					<div className="title">
-						<h3>{item?.title}</h3>
-					</div>
-					<Link to={item?.url}>
-						<button>Read Full</button>
-					</Link>
-				</div>
+				<Card item={item} key={index} />
 			))}
 		</div>
+		</MainLayout>
 	);
 };
 

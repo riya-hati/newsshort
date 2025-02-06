@@ -7,7 +7,10 @@ const Nav = () => {
 	return (
 		<MainLayout>
 			<nav className="nav_container">
+				<Link to={"/"} >
 				<img src="../assets/logo.png" alt="logo" className="logo" />
+				</Link>
+				
 				<ul>
 					<li>
 						<Link to={"/category?type=business"}>Business</Link>
