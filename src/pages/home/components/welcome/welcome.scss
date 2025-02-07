@@ -9,11 +9,23 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	@media (max-width: 675px) {
+		padding-bottom: 1rem;
+	}
+	p {
+		margin-bottom: 15px;
+	}
 	h2 {
 		font-size: 40px;
 		width: 60%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@media (max-width: 876px) {
+			font-size: 30px;
+		}
+		@media (max-width: 675px) {
+			font-size: 25px;
+		}
 	}
 }
