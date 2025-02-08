@@ -6,6 +6,12 @@
 	.logo {
 		width: 100px;
 	}
+	.ham_barger {
+		display: none;
+		@media (max-width: 582px) {
+			display: block;
+		}
+	}
 	ul {
 		display: flex;
 		justify-content: center;
@@ -14,12 +20,50 @@
 		@media (max-width: 582px) {
 			display: none;
 		}
+
 		li {
 			list-style-type: none;
 			a {
 				text-decoration: none;
 				color: #000;
 				font-weight: 400;
+			}
+		}
+	}
+}
+.side_bar {
+	background-color: green;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 300px;
+	padding: 10px;
+	.wrapper {
+		position: relative;
+		.logo-sidebar {
+			width: 100px;
+			margin-top: 2rem;
+			padding-bottom: 15px;
+		}
+		.circle_icon {
+			position: absolute;
+			right: 0;
+			top: 10px;
+		}
+		ul {
+			li {
+				list-style-type: none;
+				padding: 10px;
+
+				&:not(:last-child) {
+					border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+				}
+				a {
+					text-decoration: none;
+					color: #000;
+					font-weight: 400;
+				}
 			}
 		}
 	}
