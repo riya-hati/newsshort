@@ -1,19 +1,31 @@
 .welcome_section {
-  background-color: grey;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  padding: 2rem 0;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    font-size: 40px;
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	background-color: #f6f6f6;
+	width: 100%;
+	height: fit-content;
+	text-align: center;
+	padding: 2rem 0;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@media (max-width: 675px) {
+		padding-bottom: 1rem;
+	}
+	p {
+		margin-bottom: 15px;
+	}
+	h2 {
+		font-size: 40px;
+		width: 60%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: 876px) {
+			font-size: 30px;
+		}
+		@media (max-width: 675px) {
+			font-size: 25px;
+		}
+	}
 }

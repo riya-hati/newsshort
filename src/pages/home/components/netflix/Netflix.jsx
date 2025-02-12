@@ -19,7 +19,9 @@ const Netflix = () => {
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas
 						repudiandae saepe quos sapiente aliquam repellendus suscipit esse.
-						Lorem ipsum dolor.
+						Lorem ipsum dolor. Lorem ipsum dolor sit amet consectetur
+						adipisicing elit. Libero beatae blanditiis assumenda alias sit
+						reiciendis, doloribus tempore est in vel.
 					</p>
 					<p>
 						{" "}
