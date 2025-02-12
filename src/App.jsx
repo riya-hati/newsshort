@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Nav from "./component/nav/Nav";
 import CategoryNews from "./pages/categoryNews/CategoryNews";
-import Footer from "./component/footer/footer";
+import Footer from "./component/footer/Footer";
 
 const App = () => {
 	return (
