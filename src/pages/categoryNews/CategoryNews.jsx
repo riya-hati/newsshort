@@ -22,9 +22,6 @@ const CategoryNews = () => {
 	};
 	console.log(categoryNews);
 
-	//   fetch(
-	//     `https://newsapi.org/v2/top-headlines?country=us&category=${type}&apiKey=b6eeff707a1444cbbf11b12871b528de`
-	//   );
 	console.log(type);
 
 	return (
