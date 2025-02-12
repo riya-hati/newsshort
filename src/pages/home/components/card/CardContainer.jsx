@@ -1,10 +1,8 @@
+import { MoveRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import MainLayout from "../../../../component/nav/layout/MainLayout";
-import "./card.scss";
-import { Link } from "react-router-dom";
-import { MoveRight } from "lucide-react";
-import PublishedTime from "../../../../component/PublishTime";
 import Card from "./card";
+import "./card.scss";
 const CardContainer = () => {
 	const [newsData, setNewsData] = useState([]);
 	useEffect(() => {
@@ -12,7 +10,7 @@ const CardContainer = () => {
 	}, []);
 	const getNewsData = async () => {
 		const response = await fetch(
-			"https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=b6eeff707a1444cbbf11b12871b528de"
+			`https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=${process.env.API_KEY}`
 		);
 		const jsonResponse = await response.json();
 		setNewsData(jsonResponse?.articles);
