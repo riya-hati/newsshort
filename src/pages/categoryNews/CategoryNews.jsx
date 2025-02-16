@@ -14,16 +14,16 @@ const CategoryNews = () => {
 		console.log("hello");
 	}, [type]);
 	const getCategoryData = async () => {
-		const response = await fetch(
-			`https://newsapi.org/v2/top-headlines?country=us&category=${type}&apiKey=${process.env.API_KEY}`
-		);
-		const toJson = await response.json();
-		setCategoryNews(toJson.articles);
+		try {
+			const response = await fetch(
+				`https://newsapi.org/v2/top-headlines?country=us&category=${type}&apiKey=${process.env.API_KEY}`
+			);
+			const toJson = await response.json();
+			setCategoryNews(toJson.articles);
+		} catch (error) {
+			console.log(error);
+		}
 	};
-	console.log(categoryNews);
-
-	console.log(type);
-
 	return (
 		<MainLayout>
 			<div className="container">

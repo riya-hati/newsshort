@@ -1,34 +1,26 @@
 import { ShieldQuestion } from "lucide-react";
 import MainLayout from "../../../../component/nav/layout/MainLayout";
 import "./netflix.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import HeroSlider from "../heroSlider/heroSlider";
 
 const Netflix = () => {
+	const [popularNews, setPopularNews] = useState([]);
+	useEffect(() => {
+		getPopularNews();
+	}, []);
+	const getPopularNews = async () => {
+		const response = await fetch(
+			`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.API_KEY}`
+		);
+		const jsonResponse = await response.json();
+		setPopularNews(jsonResponse?.articles);
+	};
+	console.log("riya", popularNews);
+
 	return (
 		<MainLayout>
-			<div className="netflix_section">
-				<div className="left_box">
-					<img src="../assets/john-wick.jpg" alt="images" />
-				</div>
-				<div className="Right_box">
-					<p>
-						<ShieldQuestion className="icon" />
-						Netflix • 12 minutes ago
-					</p>
-					<h3>Where To Watch 'John Wick: Chapter 4'</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas
-						repudiandae saepe quos sapiente aliquam repellendus suscipit esse.
-						Lorem ipsum dolor. Lorem ipsum dolor sit amet consectetur
-						adipisicing elit. Libero beatae blanditiis assumenda alias sit
-						reiciendis, doloribus tempore est in vel.
-					</p>
-					<p>
-						{" "}
-						<span>Movies</span> • 4 min read
-					</p>
-				</div>
-			</div>
+			<HeroSlider popularNewsData={popularNews} />
 		</MainLayout>
 	);
 };

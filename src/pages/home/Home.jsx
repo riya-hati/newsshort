@@ -1,8 +1,7 @@
 // import "./style.scss";
-import Welcome from "./components/welcome/Welcome";
-import Netflix from "./components/netflix/Netflix";
 import CardContainer from "./components/card/CardContainer";
-import Skeleton from "../../component/skeleton/skeleton";
+import Netflix from "./components/netflix/Netflix";
+import Welcome from "./components/welcome/Welcome";
 
 const Home = () => {
 	return (
@@ -10,7 +9,6 @@ const Home = () => {
 			<Welcome />
 			<Netflix />
 			<CardContainer />
-			<Skeleton />
 		</>
 	);
 };

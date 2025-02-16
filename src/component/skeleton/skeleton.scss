@@ -1,11 +1,18 @@
 .skeleton_container {
 	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	gap: 1rem;
 	.skeleton_card {
 		width: 300px;
-		height: 650px;
+		height: 370px;
+		border-radius: 10px;
+		background-color: #cccccca8;
+
 		.skeleton_img {
 			width: 100%;
-			height: 250px;
+			height: 180px;
 			border-radius: 10px;
 			background-color: #cccccc;
 			animation: skeleton 1s ease infinite alternate;
@@ -17,34 +24,8 @@
 		}
 		.skeleton_title {
 			padding: 10px;
-			height: 20px;
-			width: 100%;
-			border-radius: 8px;
-			background-color: #cccccc;
-			animation: skeleton 1s ease infinite alternate;
-			@keyframes skeleton {
-				to {
-					opacity: 0.5;
-				}
-			}
-		}
-		.skeleton_para {
-			padding: 10px;
-			height: 40px;
-			padding: 10px;
-			border-radius: 8px;
-			background-color: #cccccc;
-			animation: skeleton 1s ease infinite alternate;
-			@keyframes skeleton {
-				to {
-					opacity: 0.5;
-				}
-			}
-		}
-		.skeleton_desc {
-			padding: 10px;
-			height: 40px;
-			padding: 10px;
+			height: 50px;
+			margin: 10px;
 			border-radius: 8px;
 			background-color: #cccccc;
 			animation: skeleton 1s ease infinite alternate;

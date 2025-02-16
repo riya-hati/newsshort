@@ -24,9 +24,6 @@ const Card = ({ item }) => {
 					<p>
 						{(item?.description?.slice(0, 50) || "No description available") +
 							(item?.description?.length > 50 ? "..." : "")}
-						{/* {(item?.description?.slice(0, 50) ||
-                        "No description available") +
-                        (item?.description?.Length > 50 ? "..." : "")} */}
 					</p>
 				</div>
 				<Link to={item?.url}>Read More</Link>
