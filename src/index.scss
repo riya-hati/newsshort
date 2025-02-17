@@ -14,3 +14,17 @@ p,
 a {
 	font-family: "Poppins", serif;
 }
+.line_clamp_2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+}
+.line_clamp_3 {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	text-align: left;
+	height: 80px;
+}

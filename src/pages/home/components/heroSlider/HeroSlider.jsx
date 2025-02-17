@@ -26,7 +26,7 @@ const HeroSlider = ({ popularNewsData }) => {
 				clickable: true,
 			}}
 			navigation={true}
-			modules={[Autoplay, Pagination, Navigation]}
+			modules={[Autoplay, Navigation]}
 			onAutoplayTimeLeft={onAutoplayTimeLeft}
 			className="mySwiper"
 		>
@@ -39,13 +39,12 @@ const HeroSlider = ({ popularNewsData }) => {
 						<div className="Right_box">
 							<p>
 								<ShieldQuestion className="icon" />
-								{item?.author} •{" "}
+								{item?.author}
 								<PublishedTime publishedAt={item?.publishedAt} />
 							</p>
-							<h3>{item?.title}</h3>
-							<p>{item?.description}</p>
+							<h3 className="line_clamp_2">{item?.title}</h3>
+							<p className="line_clamp_3">{item?.description}</p>
 							<p>
-								{" "}
 								<span>Movies</span> • 4 min read
 							</p>
 						</div>
