@@ -1,7 +1,7 @@
 import { MoveRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import MainLayout from "../../../../component/nav/layout/MainLayout";
-import Card from "./card";
+import Card from "./Card";
 import "./card.scss";
 import Skeleton from "../../../../component/skeleton/Skeleton";
 const CardContainer = () => {
