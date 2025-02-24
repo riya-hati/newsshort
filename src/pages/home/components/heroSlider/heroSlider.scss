@@ -1,53 +1,224 @@
 .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
-  }
-  
-  .autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
-  }
-  
+	width: 100%;
+	height: 100%;
+
+	.swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: #fff;
+
+		/* Center slide text vertically */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.netflix_section {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.left_box {
+				width: 40%;
+				height: 280px;
+				@media (max-width: 650px) {
+					height: 450px;
+				}
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.right_box {
+				width: 55%;
+
+				p {
+					font-size: 14px;
+					display: flex;
+					align-items: center;
+
+					.icon {
+						margin-right: 8px;
+					}
+
+					span {
+						margin-left: 4px;
+						font-weight: 500;
+					}
+				}
+
+				h3.line_clamp_2 {
+					font-size: 16px;
+					margin: 10px 0;
+				}
+
+				p.line_clamp_3 {
+					font-size: 14px;
+					color: #888;
+				}
+			}
+		}
+	}
+
+	.autoplay-progress {
+		position: absolute;
+		right: 16px;
+		bottom: 16px;
+		z-index: 10;
+		width: 48px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		color: var(--swiper-theme-color);
+
+		svg {
+			--progress: 0;
+			position: absolute;
+			left: 0;
+			top: 0px;
+			z-index: 10;
+			width: 100%;
+			height: 100%;
+			stroke-width: 4px;
+			stroke: var(--swiper-theme-color);
+			fill: none;
+			stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+			stroke-dasharray: 125.6;
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+	.swiper {
+		.swiper-slide {
+			font-size: 16px;
+
+			.netflix_section {
+				.left_box {
+					width: 45%;
+				}
+
+				.right_box {
+					width: 50%;
+				}
+			}
+
+			.autoplay-progress {
+				width: 40px;
+				height: 40px;
+
+				svg {
+					stroke-width: 3px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.swiper {
+		.swiper-slide {
+			font-size: 14px;
+
+			.netflix_section {
+				.left_box {
+					width: 50%;
+				}
+
+				.right_box {
+					width: 45%;
+				}
+			}
+
+			.autoplay-progress {
+				width: 36px;
+				height: 36px;
+
+				svg {
+					stroke-width: 2px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.swiper {
+		.swiper-slide {
+			font-size: 12px;
+
+			.netflix_section {
+				flex-direction: column;
+
+				.left_box,
+				.right_box {
+					width: 100%;
+				}
+
+				.right_box p {
+					font-size: 14px;
+				}
+
+				.right_box h3 {
+					font-size: 16px;
+				}
+			}
+
+			.autoplay-progress {
+				width: 32px;
+				height: 32px;
+
+				svg {
+					stroke-width: 2px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.swiper {
+		.swiper-slide {
+			font-size: 10px;
+
+			.netflix_section {
+				.left_box img {
+					width: 100%;
+					height: auto;
+				}
+
+				.right_box p {
+					font-size: 12px;
+				}
+
+				.right_box h3 {
+					font-size: 14px;
+				}
+
+				.right_box .line_clamp_3 {
+					font-size: 12px;
+				}
+			}
+
+			.autoplay-progress {
+				width: 28px;
+				height: 28px;
+
+				svg {
+					stroke-width: 1px;
+				}
+			}
+		}
+	}
+}

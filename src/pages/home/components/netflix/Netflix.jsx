@@ -3,6 +3,7 @@ import MainLayout from "../../../../component/nav/layout/MainLayout";
 import "./netflix.scss";
 import React, { useEffect, useState } from "react";
 import HeroSlider from "../heroSlider/heroSlider";
+import Skeleton from "../heroSlider/skeleton";
 
 const Netflix = () => {
 	const [popularNews, setPopularNews] = useState([]);
@@ -21,6 +22,7 @@ const Netflix = () => {
 	return (
 		<MainLayout>
 			<HeroSlider popularNewsData={popularNews} />
+			<Skeleton />
 		</MainLayout>
 	);
 };
