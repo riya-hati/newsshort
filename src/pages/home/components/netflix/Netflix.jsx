@@ -7,6 +7,7 @@ import Skeleton from "../heroSlider/skeleton";
 
 const Netflix = () => {
 	const [popularNews, setPopularNews] = useState([]);
+	const [loading, setLoading] = useState(true);
 	useEffect(() => {
 		getPopularNews();
 	}, []);
@@ -16,13 +17,11 @@ const Netflix = () => {
 		);
 		const jsonResponse = await response.json();
 		setPopularNews(jsonResponse?.articles);
+		setLoading(false);
 	};
-	console.log("riya", popularNews);
-
 	return (
 		<MainLayout>
-			<HeroSlider popularNewsData={popularNews} />
-			<Skeleton />
+			{loading ? <Skeleton /> : <HeroSlider popularNewsData={popularNews} />}
 		</MainLayout>
 	);
 };

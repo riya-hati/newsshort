@@ -8,8 +8,10 @@ const Skeleton = () => {
 			<div className="right">
 				<div className="right_sub"></div>
 				<div className="right_sub"></div>
+				<div className="right_sub"></div>
+				<div className="right_sub"></div>
 			</div>
-            </div>
+		</div>
 	);
 };
 
