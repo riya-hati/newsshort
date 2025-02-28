@@ -1,9 +1,8 @@
-import { ShieldQuestion } from "lucide-react";
-import MainLayout from "../../../../component/nav/layout/MainLayout";
-import "./netflix.scss";
 import React, { useEffect, useState } from "react";
+import MainLayout from "../../../../component/nav/layout/MainLayout";
 import HeroSlider from "../heroSlider/heroSlider";
 import Skeleton from "../heroSlider/skeleton";
+import "./netflix.scss";
 
 const Netflix = () => {
 	const [popularNews, setPopularNews] = useState([]);

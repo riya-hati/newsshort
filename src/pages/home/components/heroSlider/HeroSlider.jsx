@@ -37,16 +37,15 @@ const HeroSlider = ({ popularNewsData }) => {
 							<img src={item?.urlToImage} alt="images" />
 						</div>
 						<div className="Right_box">
+							<p>{item?.author} </p>
 							<p>
-								<ShieldQuestion className="icon" />
-								{item?.author}
 								<PublishedTime publishedAt={item?.publishedAt} />
 							</p>
 							<h3 className="line_clamp_2">{item?.title}</h3>
 							<p className="line_clamp_3">{item?.description}</p>
-							<p>
+							{/* <p>
 								<span>Movies</span> • 4 min read
-							</p>
+							</p> */}
 						</div>
 					</div>
 				</SwiperSlide>
