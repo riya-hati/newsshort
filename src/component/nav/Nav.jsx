@@ -14,7 +14,6 @@ const Nav = () => {
 						<img src="../assets/logo.png" alt="logo" className="logo" />
 					</Link>
 					<Menu className="ham_barger" onClick={() => setOpen(true)} />
-
 					<ul>
 						<li>
 							<Link to={"/category?type=business"}>Business</Link>
