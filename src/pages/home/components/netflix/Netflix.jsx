@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainLayout from "../../../../component/nav/layout/MainLayout";
-import HeroSlider from "../heroSlider/heroSlider";
+import HeroSlider from "../heroSlider/HeroSlider";
 import Skeleton from "../heroSlider/skeleton";
 import "./netflix.scss";
 
