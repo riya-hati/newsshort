@@ -1,9 +1,9 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import "./categoryNews.scss";
 
-import React, { useEffect, useState } from "react";
-import Card from "../home/components/card/card";
+import { useEffect, useState } from "react";
 import MainLayout from "../../component/nav/layout/MainLayout";
+import Card from "../home/components/card/Card";
 
 const CategoryNews = () => {
 	const [categoryNews, setCategoryNews] = useState([]);
